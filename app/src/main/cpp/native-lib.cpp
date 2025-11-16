@@ -27,12 +27,14 @@ Java_com_example_androidopencvproject_MainActivity_processImage(
     Mat cannyEdges;
     Canny(grayMat, cannyEdges, 50, 150);
 
+    Mat rotatedEdges;
+    cv::rotate(cannyEdges, rotatedEdges, cv::ROTATE_90_CLOCKWISE);
+
     std::vector<unsigned char> buffer;
-    imencode(".jpg", cannyEdges, buffer);
+    imencode(".jpg", rotatedEdges, buffer);
 
     jbyteArray processedImageArray = env->NewByteArray(buffer.size());
     env->SetByteArrayRegion(processedImageArray, 0, buffer.size(), (jbyte *) buffer.data());
-
 
     env->ReleaseByteArrayElements(yPlane, yBytes, 0);
 

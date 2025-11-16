@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenCV Processed Frame</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 20px;
+        background: #f0f0f0;
+      }
+      h1 {
+        color: #333;
+      }
+      img {
+        border: 1px solid #ccc;
+        max-width: 100%;
+        height: auto;
+      }
+      #stats {
+        margin-top: 15px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Processed Canny Edge Frame</h1>
+
+    <img id="processed-image" src="Preview3.png" alt="Canny Edge Detection" />
+
+    <div id="stats">
+      <p><strong>Resolution:</strong> <span id="resolution">...</span></p>
+      <p><strong>Processing FPS (Mock):</strong> <span id="fps">...</span></p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
